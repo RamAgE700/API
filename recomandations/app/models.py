@@ -11,7 +11,7 @@ class MovieRecommendation(models.Model):
     added_on = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to='movie_images/', null=True, blank=True)
     rating = models.IntegerField(null=True, blank=True)
-    
+    actors = models.CharField(max_length=255 ,null=True)
 
     def __str__(self):
         return f"{self.title} - Rated: {self.rating if self.rating is not None else 'Not Rated'}"
